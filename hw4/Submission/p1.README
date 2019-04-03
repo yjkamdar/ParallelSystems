@@ -1,0 +1,72 @@
+Single Author info:
+yjkamdar Yash J Kamdar
+
+
+Hadoop execution steps:
+
+srun -N4 -popteron --pty /bin/bash
+cd <go to hadoop setup directory>
+
+Copy hadoop setup file and tfidf skeleton zip to execution directory
+
+#Setup hadoop
+source hadoop-setup.sh &> setup_output.txt
+
+#Check hadoop setup
+hdfs dfs -ls /user
+
+#extract
+tar xvf TFIDF.tar
+
+#copy input to hadoop file system
+hdfs dfs -put input /user/yjkamdar/input
+
+
+#Compile and run TFIDF code
+javac TFIDF.java
+jar cf TFIDF.jar TFIDF*.class
+hadoop jar TFIDF.jar TFIDF input &> hadoop_output.txt
+rm -rf output
+
+#fetch output from hdfs file system to execution directory
+hdfs dfs -get /user/yjkamdar/output
+
+#Stop hdfs file system
+hadoop/sbin/stop-dfs.sh
+
+
+
+
+Job configuration:
+First we start with creating a job for each implementaion in the sequence of wc -> ds -> tfidf
+Here we add the mapper and the reducer to the job.
+Configure the output key datatype and value datatype.
+
+
+
+
+Word count map/reduce implementation:
+Mapper -> map all the words in each document and assign the size of 1 to each occurance of that word.
+
+Reducer -> Count the occurance of the word in each document using the mapper output and thereby reduce the write each word to its respective count in the document for the output.
+
+
+
+
+Doc size map/reduce implementation:
+Mapper -> This mapper will take the key/value pair from the previous output of WCReducer. This whole pair is received from the 'value' parameter of the mapper. This function will map the document name to the pair of word and its count.
+
+Reducer -> The function will reduce the values mapped previously.
+This function will first count the total number of words in each document. It will then output pairs of 'word in a file' as key to the 'specific word count / total words in doc'.
+
+
+
+TFIDF map/reduce implementation:
+Mapper -> The tfidf mapper will use the output from DSReducer to write the calculated word count and filename and map it to each word as the key.
+
+Reducer -> Output from the TFIDF mapper is used to generate the final TFIDF value for each unique word in a document. 
+First we count total number of docs in which a word occurs and also create a map of filename and the doc wordcount for that word in each doc.
+Then, we compute the TFIDF value for each unique word in a doc and provide the output of the same.
+
+Why use logarithm in IDF calculation?
+In the TFIDF calculation, we use the logarithmic function to compute the IDF value because the difference in the word occurance in one document to that in a second document might not be that significant when the occurances are really high in each doc. Thus adding a logarithmic function will result in a linear increase in the value.

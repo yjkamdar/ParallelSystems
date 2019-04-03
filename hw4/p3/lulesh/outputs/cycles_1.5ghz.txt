@@ -1,0 +1,82 @@
+Warning: Process to core binding is enabled and OMP_NUM_THREADS is set to non-zero (8) value
+If your program has OpenMP sections, this can cause over-subscription of cores and consequently poor performance
+To avoid this, please re-run your application after setting MV2_ENABLE_AFFINITY=0
+Use MV2_USE_THREAD_WARNING=0 to suppress this message
+Running problem size 70^3 per domain until completion
+Num processors: 8
+Num threads: 8
+Total number of elements: 2744000
+
+time = 1.000000e-07, dt=1.000000e-07, stop_time = 1.000000e-05
+time = 2.200000e-07, dt=1.200000e-07, stop_time = 1.000000e-05
+time = 3.640000e-07, dt=1.440000e-07, stop_time = 1.000000e-05
+time = 5.368000e-07, dt=1.728000e-07, stop_time = 1.000000e-05
+time = 7.441600e-07, dt=2.073600e-07, stop_time = 1.000000e-05
+time = 9.117029e-07, dt=1.675429e-07, stop_time = 1.000000e-05
+time = 1.053689e-06, dt=1.419864e-07, stop_time = 1.000000e-05
+time = 1.182438e-06, dt=1.287482e-07, stop_time = 1.000000e-05
+time = 1.303070e-06, dt=1.206328e-07, stop_time = 1.000000e-05
+time = 1.418410e-06, dt=1.153392e-07, stop_time = 1.000000e-05
+time = 1.530237e-06, dt=1.118272e-07, stop_time = 1.000000e-05
+time = 1.639790e-06, dt=1.095535e-07, stop_time = 1.000000e-05
+time = 1.747998e-06, dt=1.082076e-07, stop_time = 1.000000e-05
+time = 1.877847e-06, dt=1.298491e-07, stop_time = 1.000000e-05
+time = 2.027982e-06, dt=1.501351e-07, stop_time = 1.000000e-05
+time = 2.169966e-06, dt=1.419839e-07, stop_time = 1.000000e-05
+time = 2.305178e-06, dt=1.352120e-07, stop_time = 1.000000e-05
+time = 2.435272e-06, dt=1.300941e-07, stop_time = 1.000000e-05
+time = 2.561149e-06, dt=1.258771e-07, stop_time = 1.000000e-05
+time = 2.682697e-06, dt=1.215483e-07, stop_time = 1.000000e-05
+time = 2.801835e-06, dt=1.191372e-07, stop_time = 1.000000e-05
+time = 2.920475e-06, dt=1.186409e-07, stop_time = 1.000000e-05
+time = 3.039116e-06, dt=1.186409e-07, stop_time = 1.000000e-05
+time = 3.157757e-06, dt=1.186409e-07, stop_time = 1.000000e-05
+time = 3.276398e-06, dt=1.186409e-07, stop_time = 1.000000e-05
+time = 3.395039e-06, dt=1.186409e-07, stop_time = 1.000000e-05
+time = 3.513680e-06, dt=1.186409e-07, stop_time = 1.000000e-05
+time = 3.644307e-06, dt=1.306266e-07, stop_time = 1.000000e-05
+time = 3.774933e-06, dt=1.306266e-07, stop_time = 1.000000e-05
+time = 3.920442e-06, dt=1.455090e-07, stop_time = 1.000000e-05
+time = 4.065951e-06, dt=1.455090e-07, stop_time = 1.000000e-05
+time = 4.240562e-06, dt=1.746108e-07, stop_time = 1.000000e-05
+time = 4.437009e-06, dt=1.964469e-07, stop_time = 1.000000e-05
+time = 4.625946e-06, dt=1.889371e-07, stop_time = 1.000000e-05
+time = 4.808752e-06, dt=1.828058e-07, stop_time = 1.000000e-05
+time = 4.987465e-06, dt=1.787132e-07, stop_time = 1.000000e-05
+time = 5.163582e-06, dt=1.761168e-07, stop_time = 1.000000e-05
+time = 5.338668e-06, dt=1.750865e-07, stop_time = 1.000000e-05
+time = 5.513755e-06, dt=1.750865e-07, stop_time = 1.000000e-05
+time = 5.688841e-06, dt=1.750865e-07, stop_time = 1.000000e-05
+time = 5.863928e-06, dt=1.750865e-07, stop_time = 1.000000e-05
+time = 6.039015e-06, dt=1.750865e-07, stop_time = 1.000000e-05
+time = 6.236469e-06, dt=1.974548e-07, stop_time = 1.000000e-05
+time = 6.433924e-06, dt=1.974548e-07, stop_time = 1.000000e-05
+time = 6.631379e-06, dt=1.974548e-07, stop_time = 1.000000e-05
+time = 6.828834e-06, dt=1.974548e-07, stop_time = 1.000000e-05
+time = 7.024186e-06, dt=1.953523e-07, stop_time = 1.000000e-05
+time = 7.214962e-06, dt=1.907759e-07, stop_time = 1.000000e-05
+time = 7.401814e-06, dt=1.868522e-07, stop_time = 1.000000e-05
+time = 7.585414e-06, dt=1.835997e-07, stop_time = 1.000000e-05
+time = 7.766391e-06, dt=1.809773e-07, stop_time = 1.000000e-05
+time = 7.945400e-06, dt=1.790091e-07, stop_time = 1.000000e-05
+time = 8.123172e-06, dt=1.777713e-07, stop_time = 1.000000e-05
+time = 8.300356e-06, dt=1.771841e-07, stop_time = 1.000000e-05
+time = 8.477540e-06, dt=1.771841e-07, stop_time = 1.000000e-05
+time = 8.654724e-06, dt=1.771841e-07, stop_time = 1.000000e-05
+time = 8.831908e-06, dt=1.771841e-07, stop_time = 1.000000e-05
+time = 9.009092e-06, dt=1.771841e-07, stop_time = 1.000000e-05
+time = 9.186276e-06, dt=1.771841e-07, stop_time = 1.000000e-05
+time = 9.363460e-06, dt=1.771841e-07, stop_time = 1.000000e-05
+time = 9.563299e-06, dt=1.998386e-07, stop_time = 1.000000e-05
+time = 9.763137e-06, dt=1.998386e-07, stop_time = 1.000000e-05
+time = 9.912490e-06, dt=1.493529e-07, stop_time = 1.000000e-05
+5 15023133755 113917989
+time = 1.000000e-05, dt=8.750966e-08, stop_time = 1.000000e-05
+Elapsed Time = 119.904499 seconds.
+0 15130954158 128966725
+7 15042470777 118964474
+4 14996050076 133359441
+3 15213332436 146227981
+1 15120681975 132090907
+6 14947288803 104048031
+2 15134901441 134158759

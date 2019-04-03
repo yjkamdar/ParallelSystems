@@ -1,0 +1,31 @@
+Problem 1 README:
+
+Compilation procedure:
+
+srun -N4 -popteron --pty /bin/bash
+cd <p1 path>
+tar xvf TFIDF.tar
+source spark-hadoop-setup.sh &> setup_output.txt
+hdfs dfs -put input /user/yjkamdar/input
+
+javac TFIDF.java
+jar cf TFIDF.jar TFIDF*.class
+spark-submit --class TFIDF TFIDF.jar input &> spark_output.txt
+grep -v '^2018\|^(\|^-' spark_output.txt > output.txt
+diff -s solution.txt output.txt
+
+
+_____________________________________________________________
+
+Spark Implementation steps:
+
+I) TFRdd: First job calculates the TFRdd value of wordcount/docSize for each word in a document. This is done by mapping the list word in each document to the docsize inverse. The mapped values are then reduced to 'wordcount/docSize' as a string.
+
+
+II) IDFRdd: Second job calculates the IDFRdd value(but without the logarithm). The result of tfrdd is used as input to create a map of word in a document. This is then reduced to the word as the key to the total number of docs with that word to all the documents where the key word exists. The resulting reduced pairs are then mapped to create the idfRdd values of 'numDocs/numDocsWithWord' as a string.
+
+III) Final TFRdd: This job takes the TFRdd pairs as inputs and converts the string value to an actual calculated value for 'wordcount/docSize'.
+
+IV) Final IDFRdd: This job performs a logarithm function on the IDFRdd values calculated earlier in Job II.
+
+V) TFIDFRdd: This function first performs a union between the values from job III and job IV. With this both the TF and IDF values are then reduced by multiplication and the pairs are then mapped as word@document(key) -> tfidf(value)

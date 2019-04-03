@@ -1,0 +1,12 @@
+README
+
+->The graph describes the average round trip time taken and the standard deviation of 10 iterations. These samples were taken by each pair for varying sample sizes ranging from 32 bytes to 2MB. With the average round trip time on Y-axis and the sample size on the X-axis. The node pairs have been seperated into 4 blocks, viz. p1_avg, p2_avg, p3_avg and p4_avg
+
+-> It is clear as per the graph that there is an increasing trend for each sample size. i.e., the average round trip time is directly proportional to the message size.
+
+-> Only in the first sample size on each pair, the trend is inconsistent with the remaining samples, with the value far greater than expected. This might be due to the initial handshakes done by each node with its pairing node.
+
+->Yes , I think my results could be an indication of the underlying network configuration. Because if the pair nodes are on the same switch, it'll take lesser time than when they are on seperate switches
+
+-> There are some odd data points like for pair 1-sample 8KB, pair2 - 32KB, pair3 - 32KB, pair4 - 512 bytes & 16KB.
+The first sample of 8 bytes is consistently inconsistent among all nodes. The odd data points can be due to the latency while passing the messages.
